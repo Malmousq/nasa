@@ -1,0 +1,28 @@
+const http = require('http');
+require('dotenv').config();
+ console.log(process.env)
+
+const {mongoConnect} = require('./services/mongo');
+const app = require('./app');
+
+
+
+const {loadPlanetsData} = require('./models/planets.model');
+const {loadLaunchesData} = require('./models/launches.model');
+const PORT = process.env.PORT;
+
+const server = http.createServer(app);
+
+
+async function startServer(){
+    await mongoConnect();
+    await loadPlanetsData();
+    await loadLaunchesData();
+    server.listen(PORT, ()=>{
+        console.log(`Listening on port : ${PORT}`)
+    })
+}
+
+startServer()
+
+console.log(PORT);
