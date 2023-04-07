@@ -10,7 +10,6 @@ jobs:
       CI: true
       MONGO_URL: mongodb://localhost/nasa
     strategy:
-     
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
