@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "install-server": "npm install --prefix server",
+    "install-client": "npm install --prefix client",
     "server": "nodemon server.js --prefix server",
     "client": "npm start --prefix client",
     "watch": "npm run server & npm run client",

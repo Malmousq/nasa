@@ -1,5 +1,7 @@
 const http = require('http');
-require('dotenv').config();
+ require('dotenv').config();
+
+
  console.log(process.env)
 
 const {mongoConnect} = require('./services/mongo');
